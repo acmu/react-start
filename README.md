@@ -1,8 +1,8 @@
-# react redux antd 项目模版
+# React Redux Antd 项目模版
 
 近期要写一个 Oning Judge 的前端项目，所以学习一下创建 React 项目。
 
-## react 热更新 + bable + webpack
+## React 热更新 + Bable + Webpack
 
 初始化项目
 
@@ -122,27 +122,27 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env'] }
+        options: { presets: ['@babel/env'] },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/dist/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'public/'),
     port: 3000,
     publicPath: 'http://localhost:3000/dist/',
-    hotOnly: true
+    hotOnly: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 };
 ```
 
@@ -176,7 +176,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <h1>hi react</h1>
       </div>
     );
@@ -224,7 +224,7 @@ git branch --set-upstream-to=origin/master master
 git pull origin master --allow-unrelated-histories 强制关联本地和远程库
 ```
 
-## 添加 eslint
+## 添加 Eslint
 
 首先，要在你的 vscode 编辑器上添加 eslint 插件，这样才能提示。
 
@@ -271,19 +271,19 @@ eslint-plugin-react@latest
 module.exports = {
   env: {
     browser: true,
-    es6: true
+    es6: true,
   },
   extends: ['plugin:react/recommended'],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react'],
   rules: {
@@ -298,8 +298,8 @@ module.exports = {
     // 操作符之间加空格
     'space-infix-ops': 'error',
     'no-console': 'warn',
-    'no-debugger': 'warn'
-  }
+    'no-debugger': 'warn',
+  },
 };
 ```
 
@@ -334,14 +334,24 @@ foo({
 });
 ```
 
+最后还可以添加 `[prettier](https://prettier.io/)` ，这是一个代码格式化的工具，先下 vscode 的 prettier 插件，之后添加配置文件 `.prettierrc`
+
+```
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all"
+}
+```
+
+这时，快捷键 `shift + alt + f` 就可以按照配置文件格式化代码。
+
 ## 添加 Ant Design
 
 ## 添加 Redux
-
-
-
-
-
 
 ```
 
