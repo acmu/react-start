@@ -1,6 +1,6 @@
 # React Redux Antd 项目模版
 
-近期要写一个 Oning Judge 的前端项目，所以学习一下创建 React 项目。
+近期要写一个 Online Judge 的前端项目，所以学习一下创建 React 项目。
 
 ## React 热更新 + Bable + Webpack
 
@@ -334,7 +334,7 @@ foo({
 });
 ```
 
-最后还可以添加 `[prettier](https://prettier.io/)` ，这是一个代码格式化的工具，先下 vscode 的 prettier 插件，之后添加配置文件 `.prettierrc`
+最后还可以添加 [prettier](https://prettier.io/) ，这是一个代码格式化的工具，先下 vscode 的 prettier 插件，之后添加配置文件 `.prettierrc`
 
 ```
 {
@@ -348,6 +348,15 @@ foo({
 ```
 
 这时，快捷键 `shift + alt + f` 就可以按照配置文件格式化代码。
+
+添加less支持： `npm install --save-dev less less-loader` webpack config 中改为：
+
+```js
+{
+  test: /\.less$/,
+  use: ['style-loader', 'css-loader', 'less-loader'],
+},
+```
 
 ## 添加 Ant Design
 
