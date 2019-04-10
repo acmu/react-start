@@ -358,9 +358,73 @@ foo({
 },
 ```
 
+
+`npm install url-loader file-loader --save-dev`
+
+url-loader 提供图片压缩base64 服务， file-loader 提供 `import/require() file` 服务
+
+
+```
+// webpack.config.js
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+安装 prop-types
+`npm install --save prop-types`
+
+
+增加字体解析
+
+```js
+{
+  test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+  use: ['file-loader'],
+},
+```
+
+
+open source map
+
+
+安装 react router
+
+`npm install react-router-dom` 不加参数和 `--save` 和 `-S` 是一样的， `--save-dev`和`-D`是一样的。
+
+
+
+webpack 中 devServer.historyApiFallback 把 404 [重定向到 index.html](https://tylermcginnis.com/react-router-cannot-get-url-refresh/)
+
+
 ## 添加 Ant Design
 
+安装 antd `npm install antd --save` ，[按需加载](https://ant.design/docs/react/introduce-cn#%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD) `npm install babel-plugin-import --save-dev`
+
+
 ## 添加 Redux
+
+`npm install --save redux react-redux`
+
+rudex-saga
+
+axios
+
+
 
 ```
 
